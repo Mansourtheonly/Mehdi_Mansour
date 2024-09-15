@@ -190,8 +190,15 @@ button {
 }
 
 .btn--icon {
-  padding: 0;
-  font-size: 1.2rem;
+  display: inline-block;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333; /* You can change this color */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
 }
 
 .btn--icon:hover,
