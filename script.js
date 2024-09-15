@@ -1,63 +1,35 @@
-const body = document.body
+const body = document.body;
+const btnTheme = document.querySelector('.fa-moon');
 
-const btnTheme = document.querySelector('.fa-moon')
-const btnHamburger = document.querySelector('.fa-bars')
-
+// Function to add the theme class to the body and icon
 const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
-}
+  body.classList.add(bodyClass);
+  btnTheme.classList.add(btnClass);
+};
 
-const getBodyTheme = localStorage.getItem('portfolio-theme')
-const getBtnTheme = localStorage.getItem('portfolio-btn-theme')
+// Get the stored theme from localStorage
+const getBodyTheme = localStorage.getItem('portfolio-theme') || 'light';
+const getBtnTheme = localStorage.getItem('portfolio-btn-theme') || 'fa-moon';
 
-addThemeClass(getBodyTheme, getBtnTheme)
+// Apply the stored theme on page load
+addThemeClass(getBodyTheme, getBtnTheme);
 
-const isDark = () => body.classList.contains('dark')
+// Check if the current theme is dark
+const isDark = () => body.classList.contains('dark');
 
+// Set the theme and save it to localStorage
 const setTheme = (bodyClass, btnClass) => {
+  body.classList.remove(localStorage.getItem('portfolio-theme'));
+  btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'));
 
-	body.classList.remove(localStorage.getItem('portfolio-theme'))
-	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
+  addThemeClass(bodyClass, btnClass);
 
-  addThemeClass(bodyClass, btnClass)
+  localStorage.setItem('portfolio-theme', bodyClass);
+  localStorage.setItem('portfolio-btn-theme', btnClass);
+};
 
-	localStorage.setItem('portfolio-theme', bodyClass)
-	localStorage.setItem('portfolio-btn-theme', btnClass)
-}
-
+// Toggle theme on button click
 const toggleTheme = () =>
-	isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun')
+  isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun');
 
-btnTheme.addEventListener('click', toggleTheme)
-
-const displayList = () => {
-	const navUl = document.querySelector('.nav__list')
-
-	if (btnHamburger.classList.contains('fa-bars')) {
-		btnHamburger.classList.remove('fa-bars')
-		btnHamburger.classList.add('fa-times')
-		navUl.classList.add('display-nav-list')
-	} else {
-		btnHamburger.classList.remove('fa-times')
-		btnHamburger.classList.add('fa-bars')
-		navUl.classList.remove('display-nav-list')
-	}
-}
-
-btnHamburger.addEventListener('click', displayList)
-
-const scrollUp = () => {
-	const btnScrollTop = document.querySelector('.scroll-top')
-
-	if (
-		body.scrollTop > 500 ||
-		document.documentElement.scrollTop > 500
-	) {
-		btnScrollTop.style.display = 'block'
-	} else {
-		btnScrollTop.style.display = 'none'
-	}
-}
-
-document.addEventListener('scroll', scrollUp)
+btnTheme.addEventListener('click', toggleTheme);
