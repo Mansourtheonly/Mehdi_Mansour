@@ -23,13 +23,13 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   transition: background-color 0.3s ease;
-  overflow-x: hidden; /* Prevent horizontal scroll if any overflow */
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1200px; /* Adjust max-width as needed */
-  margin: 0 auto; /* Center align the main container */
-  padding: 0 20px; /* Add some padding for better layout */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .light {
@@ -70,7 +70,7 @@ body {
 .nav__list {
   margin-right: 1.5em;
   display: flex;
-  gap: 1em; /* Add space between navigation items */
+  gap: 1em;
 }
 
 .nav__list .link--nav {
@@ -115,17 +115,19 @@ body {
     margin: 0.5em 0;
   }
 }
+
+/* Project Section */
 .project-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the items */
-  gap: 20px; /* Add some space between items */
+  justify-content: center;
+  gap: 20px;
 }
 
 .project-card {
-  flex: 1 1 300px; /* Adjust the card size, 300px can be changed */
-  max-width: 400px; /* Limit max width to avoid stretching too much */
-  margin: 0 auto; /* Center each card */
+  flex: 1 1 300px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* Projects Grid */
@@ -161,7 +163,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em; /* Add spacing between skill items */
+  gap: 1em;
 }
 
 /* Button Styles */
