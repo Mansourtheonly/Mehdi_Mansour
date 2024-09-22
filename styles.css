@@ -23,6 +23,13 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   transition: background-color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scroll if any overflow */
+}
+
+.container {
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center align the main container */
+  padding: 0 20px; /* Add some padding for better layout */
 }
 
 .light {
@@ -107,6 +114,18 @@ body {
   .nav__list-item {
     margin: 0.5em 0;
   }
+}
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Add some space between items */
+}
+
+.project-card {
+  flex: 1 1 300px; /* Adjust the card size, 300px can be changed */
+  max-width: 400px; /* Limit max width to avoid stretching too much */
+  margin: 0 auto; /* Center each card */
 }
 
 /* Projects Grid */
